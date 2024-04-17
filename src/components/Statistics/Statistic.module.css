@@ -1,22 +1,20 @@
 .statisticsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+
+  .statisticTitle {
+    font-size: 80px;
+    font-weight: 700;
+    margin-bottom: 5px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px;
-    
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+    text-decoration: underline;
+  }
 
-    .statisticTitle {
-        font-size: 80px;
-         font-weight: 700;
-         margin-bottom: 5px;    
-         display: flex;
-         margin-bottom: 30px;
-         font-family: 'Roboto', sans-serif;
-        text-decoration:underline;
-    }
-
-    .statisticRow{
-        margin: 0 0 15px 0;
-    }
-
+  .statisticRow {
+    margin: 0 0 15px 0;
+  }
 }
