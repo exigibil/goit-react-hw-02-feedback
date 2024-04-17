@@ -16,5 +16,6 @@
 
   .feedbackMood:active {
     background-color: rgb(52, 30, 248);
+    color: aliceblue;
   }
 }
