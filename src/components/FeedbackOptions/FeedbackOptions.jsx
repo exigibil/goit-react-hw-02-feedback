@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './FeedbackOptions.module.css';
 
-function FeedbackButtons({ good, neutral, bad, onLeaveFeedback }) {
-  const handleClick = options => {
-    onLeaveFeedback(options);
+function FeedbackButtons({ onLeaveFeedback }) {
+  const handleClick = option => {
+    onLeaveFeedback(option);
   };
 
   return (
