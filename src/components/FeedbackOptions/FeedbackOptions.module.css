@@ -1,0 +1,21 @@
+.feedbackWrapper {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+
+    .feedbackMood {
+        background-color: rgb(250, 242, 231);
+        border-radius: 20%;
+        padding: 10px;
+        text-align: center;
+        font-size: 30px;
+        font-family: 'Lobster', cursive, sans-serif;
+        border: #919090 solid 1px;
+        box-shadow: inset #000000 0px -2px 2px 0px;
+      }
+
+      .feedbackMood:active {
+        background-color: rgb(52, 30, 248);
+      }
+    
+  }

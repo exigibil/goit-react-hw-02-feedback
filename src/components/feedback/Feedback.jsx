@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import styles from './feedback.module.css';
+import Statistics from '../Statistics/StatisticsText';
+import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 
 
 function Feedback() {
@@ -17,23 +19,18 @@ function Feedback() {
 
   return (
     <div className={styles.feedbackContainer}>
-      <h1 className={styles.feedbackHeader}>Topa's React Feedback</h1>
-      <h2>Please leave your feedback</h2>
+      <h1 className={styles.feedbackHeader}>Topa's React APP Feedback</h1>
+      <h2 className={styles.feedbackHeader}>Please leave your feedback</h2>
+  
       <div className={styles.feedbackWrapper}>
         <button onClick={() => updateCount(setGood)} className={styles.feedbackMood}>Good</button>
         <button onClick={() => updateCount(setNeutral)} className={styles.feedbackMood}>Neutral</button>
         <button onClick={() => updateCount(setBad)} className={styles.feedbackMood}>Bad</button>
       </div>
+      
+    <FeedbackOptions options = {{good: setGood, neutral: setNeutral, bad: setBad, onLeaveFeedback: updateCount}} />
 
-      <div className={styles.statisticsContainer}>
-            <h2>Statistics</h2>
-            <p>Good: {good}</p>
-            <p>Neutral: {neutral}</p>
-            <p>Bad: {bad}</p>
-            <p>Total: {totalFeedback}</p>
-            <p>Positive: {positivePercentrage}%</p>
-        </div>
-    
+    <Statistics good={good} neutral={neutral} bad={bad} total={totalFeedback} positivePercentage={positivePercentrage} />
      
     </div>
   );
