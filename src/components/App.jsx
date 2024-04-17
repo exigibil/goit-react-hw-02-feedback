@@ -3,7 +3,7 @@ import Feedback from './feedback/Feedback';
 import styles from './App.module.css';
 
 export const App = () => {
-  const message = 'Feedback';
+
 
   return (
     <div className={styles.appContainer}
@@ -16,7 +16,7 @@ export const App = () => {
         color: '#010101',
       }}
     >
-      <Feedback message={message} />
+      <Feedback />
 
      
     </div>
