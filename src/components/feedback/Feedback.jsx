@@ -5,22 +5,25 @@ import FeedbackButtons from '../FeedbackOptions/FeedbackOptions';
 import NotificationMessage from '../NotificationMessage/NotificationMessage';
 
 function Feedback() {
-  const [good, setGood] = useState(0);
-  const [neutral, setNeutral] = useState(0);
-  const [bad, setBad] = useState(0);
-  const totalFeedback = good + neutral + bad;
-  const positivePercentrage =
-    totalFeedback > 0 ? ((good / totalFeedback) * 100).toFixed(2) : 0;
+  const [feedbackState, setFeedbackState] = useState({
+    good: 0,
+    neutral: 0,
+    bad: 0
+  });
 
-  const updateCount = option => {
-    if (option === 'good') {
-      setGood(prevGood => prevGood + 1);
-    } else if (option === 'neutral') {
-      setNeutral(prevNeutral => prevNeutral + 1);
-    } else if (option === 'bad') {
-      setBad(prevBad => prevBad + 1);
-    }
-  };
+
+
+    const updateCount = (option) => {
+      setFeedbackState((prevState) => ({
+        ...prevState,
+        [option]: prevState[option] + 1
+      }));
+    };
+  
+    const totalFeedback = feedbackState.good + feedbackState.neutral + feedbackState.bad;
+    const positivePercentage =
+    totalFeedback > 0 ? ((feedbackState.good / totalFeedback) * 100).toFixed(2) : 0;
+  
 
   return (
     <div className={styles.feedbackContainer}>
@@ -33,11 +36,11 @@ function Feedback() {
         <NotificationMessage />
       ) : (
         <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={totalFeedback}
-          positivePercentage={positivePercentrage}
+        good={feedbackState.good}
+        neutral={feedbackState.neutral}
+        bad={feedbackState.bad}
+        total={totalFeedback}
+        positivePercentage={positivePercentage}
         />
       )}
     </div>
